@@ -6,7 +6,7 @@
 /* Selects the root element of the document:
    <html> in the case of HTML */
    :root {
-    background: yellow;
+    background: gray;
     --orange:#f2c14e;
     --winning-blocks: #2d414b;
   }
