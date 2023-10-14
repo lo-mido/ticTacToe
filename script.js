@@ -26,7 +26,7 @@ function boxClicked(e) {
     if (playerHasWon() !== false) {
       playerText.innerHTML = `${currentPlayer} Is the Winner!`;
       let winning_block =playerHasWon();
-    //   count_plays = 10
+      count_plays = 9
      winning_block.map(box => boxes[box].style.backgroundColor=winnerIndicator)
       return;
     }
