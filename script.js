@@ -10,7 +10,7 @@ const X_TEXT = "X";
 let currentPlayer = X_TEXT;
 // keeps track of the spaces being clicked
 let spaces = Array(9).fill(null);
-// let count_plays = 0;
+let count_plays = 0;
 // Creates functionality for the game board
 
 const startGame = () => {

@@ -12,10 +12,12 @@
   }
   body{
     color: var (--orange);
-    font-family: 'Peralta&family', sans-serif, cursive, monospace;
+    font-family: 'Peralta', serif;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: xx-large;
   }
   h1{
-    font-size:54px;
+    font-size:84px;
     text-transform:uppercase;
   }
   .container{
