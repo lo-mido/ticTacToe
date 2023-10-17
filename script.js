@@ -6,9 +6,9 @@ let boxes = Array.from(document.getElementsByClassName("box"));
 let winnerIndicator = getComputedStyle(document.body).getPropertyValue(
   "--winning-blocks"
 );
-let drawIndicator = getComputedStyle(document.body).getPropertyValue(
-  "--all-blocks"
-);
+// let drawIndicator = getComputedStyle(document.body).getPropertyValue(
+//   "--all-blocks"
+// );
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
@@ -36,18 +36,14 @@ function boxClicked(e) {
       );
       return;
     }
-count_plays++;
+    count_plays++;
     currentPlayer = currentPlayer == X_TEXT ? O_TEXT : X_TEXT;
   }
   console.log(count_plays);
   if (count_plays === 9) {
     // alert('draw game');
-    // spaces[id] = bothPlayers;
-    // e.target.innerText=bothPlayers;
     playerText.innerHTML = "Draw Game!";
-    // let all_blocks =drawIndicator();
-    // boxes.forEach((box) => (box.style.color = drawIndicator));
-   }
+  }
 }
 
 const winningCombos = [

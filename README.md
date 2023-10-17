@@ -2,6 +2,7 @@
 # Tic-Tac-Toe Game
 
 This is a simple implementation of the classic Tic-Tac-Toe game using HTML, CSS, and JavaScript. The game is created as a practice project to reinforce programming concepts such as functions and loops.
+![alt text](assets/images/image.png)
 
 ## How to Play
 
