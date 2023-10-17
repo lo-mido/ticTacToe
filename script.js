@@ -3,8 +3,12 @@ let restartBtn = document.getElementById("restartBtn");
 let boxes = Array.from(document.getElementsByClassName("box"));
 // initializes the variables that will be used to start the game
 
-let winnerIndicator = getComputedStyle(document.body).getPropertyValue("--winning-blocks");
-
+let winnerIndicator = getComputedStyle(document.body).getPropertyValue(
+  "--winning-blocks"
+);
+let drawIndicator = getComputedStyle(document.body).getPropertyValue(
+  "--all-blocks"
+);
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
@@ -20,24 +24,30 @@ const startGame = () => {
 
 function boxClicked(e) {
   const id = e.target.id;
-  if (!spaces[id]&& count_plays <9) {
+  if (!spaces[id] && count_plays < 9) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
     if (playerHasWon() !== false) {
       playerText.innerHTML = `${currentPlayer} Is the Winner!`;
-      let winning_block =playerHasWon();
-      count_plays = 9
-     winning_block.map(box => boxes[box].style.backgroundColor=winnerIndicator)
+      let winning_block = playerHasWon();
+      count_plays = 9;
+      winning_block.map(
+        (box) => (boxes[box].style.backgroundColor = winnerIndicator)
+      );
       return;
     }
-
+count_plays++;
     currentPlayer = currentPlayer == X_TEXT ? O_TEXT : X_TEXT;
   }
-}
-
-if (count_plays ===9){
-    playerText.innerHTML= 'Draw Game!'
-    boxes.forEach(box => box.style.color = drawIndicator)
+  console.log(count_plays);
+  if (count_plays === 9) {
+    // alert('draw game');
+    // spaces[id] = bothPlayers;
+    // e.target.innerText=bothPlayers;
+    playerText.innerHTML = "Draw Game!";
+    // let all_blocks =drawIndicator();
+    // boxes.forEach((box) => (box.style.color = drawIndicator));
+   }
 }
 
 const winningCombos = [
@@ -64,11 +74,11 @@ restartBtn.addEventListener("click", restart);
 
 function restart() {
   spaces.fill(null);
-  count_plays=0;
+  count_plays = 0;
   boxes.forEach((box) => {
     box.innerText = "";
     box.getElementsByClassName.backgroundColor = "";
-    box.style.color= '#f2c14e'
+    box.style.color = "#f2c14e";
   });
 
   playerText.innerHTML = "Tic Tac Toe";
